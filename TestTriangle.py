@@ -32,7 +32,7 @@ class TestTriangles(unittest.TestCase):
         
     # test case: scalene
     def testScalene(self):
-        self.assertEqual(classifyTriangle(7,4,2), 'Scalene', '7,4,2 is a Scalene triangle')
+        self.assertEqual(classifyTriangle(7,4,5), 'Scalene', '7,4,5 is a Scalene triangle')
     
     # test case: is a triangle
     def testValidTriangleA(self):
@@ -40,19 +40,19 @@ class TestTriangles(unittest.TestCase):
     
     # test case: is a triangle when c is not the largest number
     def testValidTriangleB(self):
-        self.assertNotEquals(classifyTriangle(8,3,6), 'NotATriangle', '4,1,8 is not a valid triangle')
+        self.assertNotEqual(classifyTriangle(8,3,6), 'NotATriangle', '4,1,8 is not a valid triangle')
     
     # test case: valid input over 200
     def testValidInputsA(self):
-        self.assertEquals(classifyTriangle(250, 10, 199), 'InvalidInput', 'One or more inputs is out of bounds (over 200)')
+        self.assertEqual(classifyTriangle(250, 10, 199), 'InvalidInput', 'One or more inputs is out of bounds (over 200)')
     
     # test valid inputs under 0
     def testValidInputsB(self):
-        self.assertEquals(classifyTriangle(3, -5, 2), 'InvalidInput', 'One or more inputs is out of bounds (negative)')
+        self.assertEqual(classifyTriangle(3, -5, 2), 'InvalidInput', 'One or more inputs is out of bounds (negative)')
     
     # test case: triangle is given non-integer values
     def testNonInts(self):
-        self.assertEquals(classifyTriangle(4.6, 3.2, 5.1), 'InvalidInput', 'Non-integer values given')
+        self.assertEqual(classifyTriangle(4.6, 3.2, 5.1), 'InvalidInput', 'Non-integer values given')
         
 if __name__ == '__main__':
     print('Running unit tests')
